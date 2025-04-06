@@ -1,0 +1,10 @@
+name: "Data Science Project"
+description: "A data science notebook with sample dataset loading, visualization, and analysis"
+variables:
+  name:
+    description: "Project name (used as the package name)"
+    default: "dsproject"
+  libraries:
+    description: "Libraries to include"
+    default: "pandas,matplotlib,scikit-learn"
+    type: list

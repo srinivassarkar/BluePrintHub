@@ -1,0 +1,13 @@
+name: "Flask API"
+description: "A Flask API with REST endpoints, error handling, and configuration"
+variables:
+  name:
+    description: "Project name (used as the package name)"
+    default: "flaskapi"
+  database:
+    description: "Database to use"
+    default: "sqlite"
+    choices:
+      - "sqlite"
+      - "postgresql"
+      - "mysql"

@@ -1,0 +1,13 @@
+name: "Python CLI"
+description: "A command-line interface application with logging, configuration and sample commands"
+variables:
+  name:
+    description: "Project name (used as the package name)"
+    default: "mycli"
+  cli_tool:
+    description: "CLI parsing library"
+    default: "click"
+    choices:
+      - "click"
+      - "argparse"
+      - "typer"

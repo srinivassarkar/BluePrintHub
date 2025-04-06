@@ -1,0 +1,58 @@
+[build-system]
+requires = ["setuptools>=42", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "{{ name }}"
+version = "0.1.0"
+description = "FastAPI application with CRUD endpoints"
+readme = "README.md"
+authors = [
+    {name = "Author", email = "author@example.com"}
+]
+license = {text = "MIT"}
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+dependencies = [
+    "fastapi>=0.100.0",
+    "uvicorn>=0.22.0",
+    "pydantic>=2.0.0",
+    {% if orm == "sqlalchemy" %}
+    "sqlalchemy>=2.0.0",
+    {% if database == "postgresql" %}
+    "psycopg2-binary>=2.9.0",
+    {% elif database == "mysql" %}
+    "pymysql>=1.0.0",
+    {% endif %}
+    {% elif orm == "tortoise" %}
+    "tortoise-orm>=0.19.0",
+    {% if database == "postgresql" %}
+    "asyncpg>=0.27.0",
+    {% elif database == "mysql" %}
+    "aiomysql>=0.1.0",
+    {% endif %}
+    {% endif %}
+]
+requires-python = ">=3.8"
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0.0",
+    "black>=22.0.0",
+    "isort>=5.0.0",
+    "mypy>=0.9.0",
+    "httpx>=0.24.0",  # For testing FastAPI
+]
+
+[tool.black]
+line-length = 88
+
+[tool.isort]
+profile = "black"
+
+[tool.mypy]
+python_version = "3.9"
+plugins = ["pydantic.mypy"]

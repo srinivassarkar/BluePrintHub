@@ -1,0 +1,19 @@
+name: "FastAPI Application"
+description: "A FastAPI application with CRUD operations, error handling, and logging"
+variables:
+  name:
+    description: "Project name (used as the package name)"
+    default: "myapi"
+  database:
+    description: "Database to use"
+    default: "sqlite"
+    choices:
+      - "sqlite"
+      - "postgresql"
+      - "mysql"
+  orm:
+    description: "ORM to use"
+    default: "sqlalchemy"
+    choices:
+      - "sqlalchemy"
+      - "tortoise"
