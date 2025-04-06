@@ -22,6 +22,9 @@ pre-commit = "^3.6.0"
 black = "^24.2.0"
 isort = "^5.13.2"
 
+[tool.poetry.scripts]
+blueprinthub = "blueprinthub.cli:app"
+
 [build-system]
 requires = ["poetry-core>=1.0.0"]
 build-backend = "poetry.core.masonry.api"
