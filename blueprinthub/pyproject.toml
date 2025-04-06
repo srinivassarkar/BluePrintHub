@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "blueprinthub"
-version = "0.1.0"
+version = "0.1.1"
 description = "A scalable CLI for templated project scaffolding and GitHub imports"
 authors = ["Srinivas Sarkar <srinivassarkar07@gmail.com>"]
 readme = "README.md"
